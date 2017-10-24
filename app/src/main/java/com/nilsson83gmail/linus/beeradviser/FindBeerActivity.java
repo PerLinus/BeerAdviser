@@ -4,7 +4,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Spinner;
-import android.widget.TextView;;import java.util.List;
+import android.widget.TextView;
+import java.util.List;
 
 public class FindBeerActivity extends Activity {
 
@@ -25,9 +26,9 @@ public class FindBeerActivity extends Activity {
 
         List<String> listOfBeers = expert.getBrands(beerType);
 
-        String beers = "";
+        StringBuilder beers = new StringBuilder();
         for (String beer : listOfBeers) {
-            beers += beer + "\n";
+            beers.append(beer).append("\n");
         }
 
         brands.setText(beers);
